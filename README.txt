@@ -1,1 +1,1 @@
-Hello World! This is my CG2 Computing Coursework!
+Hello World! This is my CG2 Computing Coursework! Well, the software side of it at least.
