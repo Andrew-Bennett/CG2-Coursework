@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmUsers 
    Caption         =   "Add, Edit & Delete Users"
    ClientHeight    =   9480
@@ -408,6 +408,12 @@ frmUsers.LockNDE
 
 End Sub
 
+Sub UpdatePlCbo()
+
+cboPermissionLevel.Text = txtPermissionLevel.Text
+
+End Sub
+
 Sub LockNDE()               'Locks the Add, Delete and Edit buttons
 
 cmdAdd.Enabled = False
@@ -478,6 +484,7 @@ Private Sub cmdFirst_Click()        'Moves to the first record in the database
 recordCount = 1
 adoUserInfo.Recordset.MoveFirst
 frmUsers.FBLock
+frmUsers.UpdatePlCbo
 
 End Sub
 
@@ -518,6 +525,7 @@ Private Sub cmdLast_Click()         'Moves to the last record
 recordCount = totalRecords
 adoUserInfo.Recordset.MoveLast
 frmUsers.LBLock
+frmUsers.UpdatePlCbo
 
 End Sub
 
@@ -528,6 +536,7 @@ If recordCount < totalRecords Then
     recordCount = recordCount + 1
     adoUserInfo.Recordset.MoveNext
     frmUsers.FBUnlock
+    frmUsers.UpdatePlCbo
     
     If recordCount = totalRecords Then
     
@@ -632,6 +641,7 @@ If recordCount > 1 Then
     recordCount = recordCount - 1
     adoUserInfo.Recordset.MovePrevious
     frmUsers.LBUnlock
+    frmUsers.UpdatePlCbo
     
     If recordCount = 1 Then
     
