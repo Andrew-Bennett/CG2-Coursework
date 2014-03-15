@@ -690,8 +690,6 @@ If cboMonth.Text = "January" Then
 Do While adoTests.Recordset.EOF = False
 
     If Mid$(txtDBTestDate.Text, 4, 2) = "01" Then
-    
-        Debug.Print (txtDBTestDate.Text)
         
         frmStudentResults.DisplayDR
         

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmADETests 
    Caption         =   "Add, Edit and Delete Tests"
    ClientHeight    =   10200
@@ -838,11 +838,8 @@ Sub MoveToDate()                    'Keep moving forward until the correct recor
 If cboDate.Text = txtDBTestDate.Text Then
 
 Else
-
-    Debug.Print ("This is not the date!")
     
     adoTests.Recordset.MoveNext
-    
     frmADETests.MoveToDate
 
 End If
@@ -982,13 +979,7 @@ If editMode = False Then
     Dim answ As String
     
     answ = InputBox("Enter Date Of The Test:", "One more thing!")
-    
-    Debug.Print (answ)
-    
     txtDBTestDate.Text = answ
-    
-    Debug.Print (txtDBTestDate.Text)
-
     adoTests.Recordset.Update
 
 Else

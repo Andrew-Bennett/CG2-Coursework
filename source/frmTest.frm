@@ -993,8 +993,6 @@ txtDBResult_ID.Text = score                     'Change and save the users score
 
 adoTests.Recordset.Update
 
-Debug.Print ("Success!")
-
 Exit Sub
 
 ErrorM:
@@ -1057,10 +1055,7 @@ If LCase$(txtAnswer(num).Text) = LCase$(txtDBAnswer(num).Text) Then
 Else
 
     MinorError                              'Calls for MinorError
-
     score = score + MinorError
-    
-    'Debug.Print (score & " " & MinorError)  'Returns a 1 if there allowed a minor error
 
 End If
     
@@ -1088,7 +1083,6 @@ End If
 
 '-- LENGTH CHECK --
 dbLen = Len(txtDBAnswer(num).Text)
-Debug.Print ("dbLen: " & dbLen)
 
 If Len(txtAnswer(num).Text) = dbLen Then
     
@@ -1103,18 +1097,15 @@ For mENum = 1 To dbLen
     If Mid$(LCase$(txtAnswer(num).Text), mENum, 1) = Mid$(LCase$(txtDBAnswer(num).Text), mENum, 1) Then
     
         lenScore = lenScore + 1
-        Debug.Print ("LenScore: " & lenScore)
     
     End If
     
 Next mENum
 
 lenPercent = lenScore / dbLen
-Debug.Print ("LenPercent: " & lenPercent)
 
 If lenPercent >= PERCENTNEEDED Then
 
-    Debug.Print ("Percent Correct")
     correctMid = True
     
 End If
@@ -1172,10 +1163,7 @@ If cboTestDate.Text = txtDBTestDate.Text Then
 
 Else
 
-    Debug.Print ("This is not the date!")
-    
     adoTests.Recordset.MoveNext
-    
     frmTest.MoveToDate
 
 End If
@@ -1194,8 +1182,6 @@ Do While adoTests.Recordset.EOF = False
         
 Loop
 
-Debug.Print ("Success!")
-
 End Sub
 
 Private Sub cboTestDate_Click() 'Moves the date selected in the cbo
@@ -1209,8 +1195,6 @@ For n = 1 To 10
 Next n
  
 frmTest.ClearDA
-
-Debug.Print (cboTestDate.Text)
 
 cbMoveFirst = True
 

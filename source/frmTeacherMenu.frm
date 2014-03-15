@@ -148,8 +148,7 @@ Dim answ As String
 answ = MsgBox("Are you sure you want to logout?", vbYesNo, "Exit?")
 
 If answ = vbYes Then
-    username = ""
-    password = ""
+    globalUsername = ""
 
     frmLogin.ShowScreen
     frmLogin.RemoveTMenu
