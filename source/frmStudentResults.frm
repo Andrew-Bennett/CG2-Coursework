@@ -1,13 +1,15 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmStudentResults 
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Students Results"
-   ClientHeight    =   10950
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientHeight    =   9630
+   ClientLeft      =   -60
+   ClientTop       =   -105
    ClientWidth     =   15510
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10950
+   ScaleHeight     =   9630
    ScaleWidth      =   15510
    StartUpPosition =   3  'Windows Default
    Begin MSAdodcLib.Adodc adoTests 
@@ -93,6 +95,7 @@ Begin VB.Form frmStudentResults
       TabIndex        =   12
       Text            =   "Text1"
       Top             =   360
+      Visible         =   0   'False
       Width           =   2775
    End
    Begin MSAdodcLib.Adodc adoUser 
@@ -149,46 +152,102 @@ Begin VB.Form frmStudentResults
       Width           =   255
    End
    Begin VB.CommandButton cmdLogout 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Logout"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   12480
+      Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   8280
       Width           =   2775
    End
    Begin VB.CommandButton cmdLast 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Last >>"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   9240
+      Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   8280
       Width           =   2775
    End
    Begin VB.CommandButton cmdNext 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Next >"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   6360
+      Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   8280
       Width           =   2775
    End
    Begin VB.CommandButton cmdPrevious 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "< Previous"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   3120
+      Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   8280
       Width           =   2775
    End
    Begin VB.CommandButton cmdFirst 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "<< First"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   240
+      Style           =   1  'Graphical
       TabIndex        =   1
       Top             =   8280
       Width           =   2775
    End
    Begin VB.Frame fraDate 
+      BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Caption         =   "Results"
       Height          =   1095
@@ -204,11 +263,12 @@ Begin VB.Form frmStudentResults
          TabIndex        =   30
          Text            =   "Text1"
          Top             =   360
+         Visible         =   0   'False
          Width           =   855
       End
       Begin VB.ComboBox cboMonth 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -216,29 +276,12 @@ Begin VB.Form frmStudentResults
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   555
+         Height          =   615
          Left            =   3240
          TabIndex        =   7
          Text            =   "Combo1"
          Top             =   240
          Width           =   3135
-      End
-      Begin VB.Label lblMessage 
-         Caption         =   "Still a work in progress! And some things are very broken!"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   855
-         Left            =   11160
-         TabIndex        =   31
-         Top             =   120
-         Width           =   3975
       End
       Begin VB.Line Line1 
          X1              =   0
@@ -247,10 +290,11 @@ Begin VB.Form frmStudentResults
          Y2              =   1080
       End
       Begin VB.Label lblSelectMonth 
+         BackStyle       =   0  'Transparent
          Caption         =   "Select Month:"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   24
+            Name            =   "Comic Sans MS"
+            Size            =   20.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -299,6 +343,7 @@ Begin VB.Form frmStudentResults
       End
    End
    Begin VB.Frame fraResults 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Frame1"
       Height          =   6975
       Left            =   120
@@ -306,10 +351,11 @@ Begin VB.Form frmStudentResults
       Top             =   1200
       Width           =   14895
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -321,13 +367,14 @@ Begin VB.Form frmStudentResults
          Left            =   7200
          TabIndex        =   27
          Top             =   2640
-         Width           =   3975
+         Width           =   4335
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -336,7 +383,7 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   6
-         Left            =   11280
+         Left            =   11640
          TabIndex        =   26
          Top             =   2640
          Width           =   2295
@@ -348,10 +395,11 @@ Begin VB.Form frmStudentResults
          Y2              =   2520
       End
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -363,13 +411,14 @@ Begin VB.Form frmStudentResults
          Left            =   120
          TabIndex        =   25
          Top             =   2640
-         Width           =   3975
+         Width           =   4455
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -378,16 +427,17 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   5
-         Left            =   4200
+         Left            =   4560
          TabIndex        =   24
          Top             =   2640
          Width           =   2295
       End
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -399,13 +449,14 @@ Begin VB.Form frmStudentResults
          Left            =   7200
          TabIndex        =   23
          Top             =   1440
-         Width           =   3975
+         Width           =   4455
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -414,16 +465,17 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   4
-         Left            =   11280
+         Left            =   11640
          TabIndex        =   22
          Top             =   1440
          Width           =   2295
       End
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -435,13 +487,14 @@ Begin VB.Form frmStudentResults
          Left            =   120
          TabIndex        =   21
          Top             =   1440
-         Width           =   3975
+         Width           =   4575
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -450,16 +503,17 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   3
-         Left            =   4200
+         Left            =   4560
          TabIndex        =   20
          Top             =   1440
          Width           =   2295
       End
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -471,13 +525,14 @@ Begin VB.Form frmStudentResults
          Left            =   7200
          TabIndex        =   17
          Top             =   240
-         Width           =   4215
+         Width           =   4815
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -486,7 +541,7 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   2
-         Left            =   11400
+         Left            =   11640
          TabIndex        =   16
          Top             =   240
          Width           =   2295
@@ -504,10 +559,11 @@ Begin VB.Form frmStudentResults
          Y2              =   1320
       End
       Begin VB.Label lblResult 
+         BackStyle       =   0  'Transparent
          Caption         =   "100%"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -516,16 +572,17 @@ Begin VB.Form frmStudentResults
          EndProperty
          Height          =   975
          Index           =   1
-         Left            =   4200
+         Left            =   4560
          TabIndex        =   15
          Top             =   240
          Width           =   2295
       End
       Begin VB.Label lblDate 
+         BackStyle       =   0  'Transparent
          Caption         =   "00/00/0000 - "
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   36
+            Name            =   "Comic Sans MS"
+            Size            =   32.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -537,7 +594,7 @@ Begin VB.Form frmStudentResults
          Left            =   120
          TabIndex        =   14
          Top             =   240
-         Width           =   3975
+         Width           =   4935
       End
    End
    Begin VB.Label lblDate 

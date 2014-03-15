@@ -1,59 +1,127 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmUsers 
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Add, Edit & Delete Users"
    ClientHeight    =   9480
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   -60
+   ClientTop       =   -105
    ClientWidth     =   13545
    LinkTopic       =   "Form1"
    ScaleHeight     =   9480
    ScaleWidth      =   13545
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdClearDatabase 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Clear Database"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   975
       Left            =   10440
+      Style           =   1  'Graphical
       TabIndex        =   23
       Top             =   6600
       Width           =   1335
    End
    Begin VB.CommandButton cmdPopulate 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Populate The Database"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   975
       Left            =   11880
+      Style           =   1  'Graphical
       TabIndex        =   22
       Top             =   6600
       Width           =   1335
    End
    Begin VB.CommandButton cmdLast 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Last >>"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   7800
+      Style           =   1  'Graphical
       TabIndex        =   21
       Top             =   8040
       Width           =   2055
    End
    Begin VB.CommandButton cmdNext 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Next >"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   5640
+      Style           =   1  'Graphical
       TabIndex        =   20
       Top             =   8040
       Width           =   2055
    End
    Begin VB.CommandButton cmdPrevious 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "< Previous"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   3240
+      Style           =   1  'Graphical
       TabIndex        =   19
       Top             =   8040
       Width           =   2055
    End
    Begin VB.CommandButton cmdFirst 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "<< First"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   1080
+      Style           =   1  'Graphical
       TabIndex        =   18
       Top             =   8040
       Width           =   2055
@@ -62,7 +130,7 @@ Begin VB.Form frmUsers
       DataField       =   "PermissionLevel"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -80,7 +148,7 @@ Begin VB.Form frmUsers
       DataField       =   "ClassYear"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -98,7 +166,7 @@ Begin VB.Form frmUsers
       DataField       =   "LastName"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -116,7 +184,7 @@ Begin VB.Form frmUsers
       DataField       =   "FirstName"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -134,7 +202,7 @@ Begin VB.Form frmUsers
       DataField       =   "Password"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -152,7 +220,7 @@ Begin VB.Form frmUsers
       DataField       =   "Username"
       DataSource      =   "adoUserInfo"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -167,41 +235,96 @@ Begin VB.Form frmUsers
       Width           =   4815
    End
    Begin VB.CommandButton cmdEdit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Edit"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1575
       Left            =   10440
+      Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   2280
       Width           =   2895
    End
    Begin VB.CommandButton cmdSave 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Save"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1575
       Left            =   10440
+      Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   240
       Width           =   2895
    End
    Begin VB.CommandButton cmdCancel 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Cancel"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1575
       Left            =   10440
+      Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   4320
       Width           =   2895
    End
    Begin VB.CommandButton cmdDelete 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Delete"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1575
       Left            =   7200
+      Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   2280
       Width           =   2895
    End
    Begin VB.CommandButton cmdAdd 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Add"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1575
       Left            =   7200
+      Style           =   1  'Graphical
       TabIndex        =   1
       Top             =   240
       Width           =   2895
@@ -254,9 +377,10 @@ Begin VB.Form frmUsers
       _Version        =   393216
    End
    Begin VB.CommandButton cmdExit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Exit"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -266,14 +390,16 @@ Begin VB.Form frmUsers
       EndProperty
       Height          =   1335
       Left            =   11040
+      Style           =   1  'Graphical
       TabIndex        =   0
       Top             =   7920
       Width           =   2295
    End
    Begin VB.Label lblPermission 
+      BackStyle       =   0  'Transparent
       Caption         =   "Permission:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -288,9 +414,10 @@ Begin VB.Form frmUsers
       Width           =   2055
    End
    Begin VB.Label lblYear 
+      BackStyle       =   0  'Transparent
       Caption         =   "Year:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -305,9 +432,10 @@ Begin VB.Form frmUsers
       Width           =   1815
    End
    Begin VB.Label lblLastName 
+      BackStyle       =   0  'Transparent
       Caption         =   "Last Name:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -322,9 +450,10 @@ Begin VB.Form frmUsers
       Width           =   1815
    End
    Begin VB.Label lblFirstName 
+      BackStyle       =   0  'Transparent
       Caption         =   "First Name:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -339,9 +468,10 @@ Begin VB.Form frmUsers
       Width           =   1935
    End
    Begin VB.Label lblPassword 
+      BackStyle       =   0  'Transparent
       Caption         =   "Password:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -356,9 +486,10 @@ Begin VB.Form frmUsers
       Width           =   1815
    End
    Begin VB.Label lblUsername 
+      BackStyle       =   0  'Transparent
       Caption         =   "Username:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
