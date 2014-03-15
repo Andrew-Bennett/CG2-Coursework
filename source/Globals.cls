@@ -11,21 +11,5 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-Option Explicit
-
-Dim CUsername, CPassword As String
-
-Sub StoreUserInfo()
-   
-   frmLogin.txtUsername = CUsername
-   frmLogin.txtPassword = CPassword
-   
-   Debug.Print (CUsername + CPassword)
-   
-
-End Sub
 
 
-Sub Globals()
-
-End Sub

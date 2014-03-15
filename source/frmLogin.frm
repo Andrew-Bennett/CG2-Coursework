@@ -1,11 +1,22 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmLogin 
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Login"
    ClientHeight    =   6000
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   0
+   ClientTop       =   0
    ClientWidth     =   7665
+   BeginProperty Font 
+      Name            =   "Comic Sans MS"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form1"
    ScaleHeight     =   6000
    ScaleWidth      =   7665
@@ -13,43 +24,67 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBID 
       DataField       =   "ID"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   1920
-      TabIndex        =   18
+      TabIndex        =   17
       Text            =   "Text1"
       Top             =   7200
       Width           =   615
    End
    Begin VB.CommandButton cmdTests 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "T"
       Height          =   375
       Left            =   7320
-      TabIndex        =   17
+      Style           =   1  'Graphical
+      TabIndex        =   16
       Top             =   4200
       Width           =   255
    End
    Begin VB.CommandButton cmdPLogin 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "P"
       Height          =   375
       Left            =   7320
-      TabIndex        =   16
+      Style           =   1  'Graphical
+      TabIndex        =   15
       Top             =   1440
       Width           =   255
    End
    Begin VB.CommandButton cmdTLogin 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "T"
       Height          =   375
       Left            =   7320
-      TabIndex        =   15
+      Style           =   1  'Graphical
+      TabIndex        =   14
       Top             =   960
       Width           =   255
    End
    Begin VB.TextBox txtDBYear 
       DataField       =   "ClassYear"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   7200
-      TabIndex        =   14
+      TabIndex        =   13
       Text            =   "Text1"
       Top             =   7080
       Width           =   255
@@ -57,9 +92,18 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBLastName 
       DataField       =   "LastName"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   6480
-      TabIndex        =   13
+      TabIndex        =   12
       Text            =   "Text1"
       Top             =   6960
       Width           =   255
@@ -67,9 +111,18 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBFirstName 
       DataField       =   "FirstName"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   5640
-      TabIndex        =   12
+      TabIndex        =   11
       Text            =   "Text1"
       Top             =   6960
       Width           =   150
@@ -77,6 +130,15 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBPassword 
       DataField       =   "Password"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   8280
       TabIndex        =   9
@@ -88,6 +150,15 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBPermissionLevel 
       DataField       =   "PermissionLevel"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   9000
       TabIndex        =   8
@@ -99,6 +170,15 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtDBUsername 
       DataField       =   "Username"
       DataSource      =   "adoUser"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   8160
       TabIndex        =   7
@@ -155,9 +235,10 @@ Begin VB.Form frmLogin
       _Version        =   393216
    End
    Begin VB.CommandButton cmdExit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Exit"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -167,14 +248,17 @@ Begin VB.Form frmLogin
       EndProperty
       Height          =   1215
       Left            =   3960
+      MaskColor       =   &H00FFFFFF&
+      Style           =   1  'Graphical
       TabIndex        =   6
       Top             =   4680
       Width           =   3615
    End
    Begin VB.CommandButton cmdLogin 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Login"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -184,13 +268,15 @@ Begin VB.Form frmLogin
       EndProperty
       Height          =   1215
       Left            =   120
+      MaskColor       =   &H00FFFFFF&
+      Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   4680
       Width           =   3735
    End
    Begin VB.TextBox txtPassword 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -209,7 +295,7 @@ Begin VB.Form frmLogin
    End
    Begin VB.TextBox txtUsername 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -225,14 +311,8 @@ Begin VB.Form frmLogin
       Top             =   1680
       Width           =   3255
    End
-   Begin VB.Label lblIUser 
-      Height          =   735
-      Left            =   3600
-      TabIndex        =   11
-      Top             =   2880
-      Width           =   2295
-   End
-   Begin VB.Label lblTest 
+   Begin VB.Label lblIncorrectMessage 
+      BackStyle       =   0  'Transparent
       Height          =   975
       Left            =   3600
       TabIndex        =   10
@@ -240,10 +320,11 @@ Begin VB.Form frmLogin
       Width           =   3495
    End
    Begin VB.Label lblPassword 
+      BackStyle       =   0  'Transparent
       Caption         =   "Password:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   13.5
+         Name            =   "Comic Sans MS"
+         Size            =   14.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -257,10 +338,11 @@ Begin VB.Form frmLogin
       Width           =   1575
    End
    Begin VB.Label lblUsername 
+      BackStyle       =   0  'Transparent
       Caption         =   "Username:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   13.5
+         Name            =   "Comic Sans MS"
+         Size            =   14.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -274,9 +356,10 @@ Begin VB.Form frmLogin
       Width           =   1575
    End
    Begin VB.Label lblSchoolName 
+      BackStyle       =   0  'Transparent
       Caption         =   "Greenparks School - Spelling Test"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -306,11 +389,125 @@ Dim passwordCorrect As Boolean
 
 Private Sub Form_Load()         'When the form loads it refreshs the database and turns user&pass correct to false
 
-usernameCorrect = False
-passwordCorrect = False
-lblIUser.Caption = ""
+adoUser.Refresh
+
+End Sub
+
+Sub Login()
+
+frmLogin.StoreUserInfo      'Store the username and password in strings
+frmLogin.SearchForUser      'Search for the user in the database
+
+End Sub
+
+Sub StoreUserInfo()
+
+globalUsername = txtUsername.Text
+password = txtPassword.Text
+
+End Sub
+
+Sub SearchForUser()
+
+If txtDBUsername.Text = globalUsername Then
+
+    If txtDBPassword.Text = password Then
+    
+        frmLogin.CheckPermissionLevel
+        
+    End If
+    
+Else
+
+    If adoUser.Recordset.EOF = True Then
+    
+        lblIncorrectMessage.Caption = "Incorrect Username or Password"
+    
+    Else
+    
+        adoUser.Recordset.MoveNext
+        frmLogin.SearchForUser
+        
+    End If
+
+End If
+
+End Sub
+
+Sub CheckPermissionLevel()
+
+If txtDBPermissionLevel.Text = "Teacher" Then
+    
+    frmLogin.SetGlobals
+    Unload Me
+    frmTeacherMenu.Show
+    
+Else
+    
+    frmLogin.SetGlobals
+    Unload Me
+    frmPupilMenu.Show
+    
+End If
+
+End Sub
+
+Sub SetGlobals()
+
+globalUsername = txtUsername.Text
+globalID = txtDBID.Text
+globalYear = txtDBYear.Text
+globalPermissionLevel = txtDBPermissionLevel.Text
+globalFirstName = txtDBFirstName.Text
+globalLastName = txtDBLastName.Text
+
+End Sub
+
+Private Sub cmdExit_Click()         'Asks the user wether they are sure they want to exit
+
+Dim answ As String
+
+answ = MsgBox("Are you sure you want to exit?", vbYesNo, "Exit?")
+
+If answ = vbYes Then
+
+    Unload Me
+    
+Else
+
+End If
+
+End Sub
+
+Private Sub cmdLogin_Click()    'When the login is clicked refresh database and move to first record before logging in
 
 adoUser.Refresh
+adoUser.Recordset.MoveFirst
+frmLogin.Login
+
+End Sub
+
+Private Sub cmdPLogin_Click()   'Enters the account details of a pupil for ease of access
+
+txtUsername.Text = "Default_Pupil"
+txtPassword.PasswordChar = "*"
+txtPassword.Text = "password098"
+txtPassword.ForeColor = "&H80000006"
+
+End Sub
+
+Private Sub cmdTests_Click()
+
+frmUsers.Show
+
+End Sub
+
+Private Sub cmdTLogin_Click()   'Enters the account details of a teacher for ease of access
+
+txtUsername.Text = "Default_Teacher"
+txtPassword.PasswordChar = "*"
+txtPassword.Text = "password123"
+txtPassword.ForeColor = "&H80000006"
 
 End Sub
 
@@ -371,157 +568,6 @@ Private Sub txtPassword_GotFocus()  ' if the password is clicked it will set a p
 txtPassword.Text = ""
 txtPassword.ForeColor = &H80000006
 txtPassword.PasswordChar = "*"
-
-End Sub
-
-Sub Login()
-
-frmLogin.StoreUserPass      'Store the username and password in strings
-frmLogin.SearchForUser      'Search for the user in the database
-
-End Sub
-
-Sub SearchForUser()         'Searches for user
-
-frmLogin.LookLoop
-
-End Sub
-
-Sub LoginCheck()    'Checks to see if both the password and the username are correct and if so check permission and login
-                                    'Else display incorrect message
-If usernameCorrect = True Then
-    
-    If passwordCorrect = True Then
-    
-        frmLogin.CheckPermission
-    
-    Else
-    
-        frmLogin.DisplayIncorrectMessage
-    
-    End If
-
-End If
-
-End Sub
-
-Sub CheckPermission()           'Checks to see if the user is either a pupil or teacher and sends them to the relevant form
-
-If txtDBPermissionLevel = "Pupil" Then
-
-    frmPupilMenu.Show
-    frmPupilMenu.CleanUp
-    
-Else
-
-    If txtDBPermissionLevel = "" Then
-    
-    Else
-    
-    frmTeacherMenu.Show
-    frmTeacherMenu.CleanUp
-    
-    End If
-
-End If
-
-End Sub
-
-Sub LookLoop()
-
-If txtDBUsername.Text = username Then    'If the username matches the Database username then check if the password matches
-
-    usernameCorrect = True
-    frmLogin.LoginCheck
-
-Else
-    
-    frmLogin.DBNext             'Else go to the next database record
-
-End If
-
-If txtDBPassword.Text = password Then        'If the password matches then check to see if they can login
-
-    passwordCorrect = True
-    frmLogin.LoginCheck
-    
-End If
-
-End Sub
-
-Sub DBNext()
-
-If adoUser.Recordset.EOF = True Then    'If end of file is true then display error message
-
-    frmLogin.DisplayIncorrectMessage
-    
-Else
-
-    adoUser.Recordset.MoveNext          'Else continue looking for the username
-    frmLogin.LookLoop
-    
-End If
-    
-End Sub
-
-Sub DisplayIncorrectMessage()   'Displays an error message if either the username or password is wrong
-
-lblTest.Caption = "Incorrect Username or Password"
-
-End Sub
-
-Sub StoreUserPass()         'Stores the username and password to strings
-
-username = txtUsername.Text
-
-password = txtPassword.Text
-
-End Sub
-Private Sub cmdExit_Click()         'Asks the user wether they are sure they want to exit
-
-Dim answ As String
-
-answ = MsgBox("Are you sure you want to exit?", vbYesNo, "Exit?")
-
-If answ = vbYes Then
-
-    Unload Me
-    
-Else
-
-End If
-
-End Sub
-
-Private Sub cmdLogin_Click()    'When the login is clicked refresh database and move to first record before logging in
-
-adoUser.Refresh
-adoUser.Recordset.MoveFirst
-frmLogin.Login
-
-End Sub
-
-Private Sub cmdPLogin_Click()   'Enters the account details of a pupil for ease of access
-
-txtUsername.Text = "Test"
-txtPassword.PasswordChar = "*"
-txtPassword.Text = "test"
-txtPassword.ForeColor = "&H80000006"
-
-End Sub
-
-Private Sub cmdTests_Click()
-
-frmUsers.Show
-
-End Sub
-
-Private Sub cmdTLogin_Click()   'Enters the account details of a teacher for ease of access
-
-txtUsername.Text = "Teacher"
-txtPassword.PasswordChar = "*"
-txtPassword.Text = "teacher"
-txtPassword.ForeColor = "&H80000006"
 
 End Sub
 

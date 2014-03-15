@@ -1,9 +1,11 @@
 VERSION 5.00
 Begin VB.Form frmPupilMenu 
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Pupil Menu"
    ClientHeight    =   9645
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   0
+   ClientTop       =   0
    ClientWidth     =   11610
    LinkTopic       =   "Form1"
    ScaleHeight     =   9645
@@ -25,9 +27,10 @@ Begin VB.Form frmPupilMenu
       Width           =   2655
    End
    Begin VB.CommandButton cmdResults 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "View Results!"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -37,14 +40,16 @@ Begin VB.Form frmPupilMenu
       EndProperty
       Height          =   3015
       Left            =   6120
+      Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   2640
       Width           =   4935
    End
    Begin VB.CommandButton cmdLogout 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Logout"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -54,14 +59,16 @@ Begin VB.Form frmPupilMenu
       EndProperty
       Height          =   3015
       Left            =   6120
+      Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   6120
       Width           =   4935
    End
    Begin VB.CommandButton cmdTest 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Take A Test!"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -71,14 +78,16 @@ Begin VB.Form frmPupilMenu
       EndProperty
       Height          =   3015
       Left            =   480
+      Style           =   1  'Graphical
       TabIndex        =   1
       Top             =   2640
       Width           =   4935
    End
    Begin VB.Label lblWelcome 
       Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   29.25
          Charset         =   0
          Weight          =   400
@@ -100,13 +109,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Dim username As String
-Dim password As String
-Dim firstName As String
-Dim lastName As String
-Dim classYear As String
-Dim id As String
-
 Private Sub cmdLogout_Click()  'Asks the user are they sure they want to logout
 
 Dim answ As String
@@ -114,8 +116,7 @@ Dim answ As String
 answ = MsgBox("Are you sure you want to logout?", vbYesNo, "Exit?")
 
 If answ = vbYes Then
-    username = ""
-    password = ""
+    globalUsername = ""
 
     frmLogin.ShowScreen
     frmLogin.RemovePMenu
@@ -139,31 +140,13 @@ End Sub
 
 Private Sub Form_Load()         'When the form loads it imports the users info and displays a welcome message
 
-frmPupilMenu.ImportUserInfo
 frmPupilMenu.DisplayWelcomeMessage
-
-End Sub
-
-Sub ImportUserInfo()                'Takes the information from the login screen and stores it in strings
-
-id = frmLogin.txtDBID
-username = frmLogin.txtDBUsername
-password = frmLogin.txtDBPassword
-firstName = frmLogin.txtDBFirstName
-lastName = frmLogin.txtDBLastName
-classYear = frmLogin.txtDBYear
-
-txtUsername.Text = username
-txtID = id
-
-Debug.Print (username + password)
-Debug.Print ("Welcome " + firstName + " " + lastName + " Of Year " + classYear)
 
 End Sub
 
 Sub DisplayWelcomeMessage() 'takes users info and displays a personal welcome message
 
-lblWelcome.Caption = ("Welcome " + firstName + " " + lastName + " Of Year " + classYear)
+lblWelcome.Caption = ("Welcome " & globalFirstName & " " & globalLastName & " Of Year " & globalYear)
 
 End Sub
 

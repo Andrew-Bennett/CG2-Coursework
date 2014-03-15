@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form frmSplashScreen 
+   BackColor       =   &H00FFFFFF&
    BorderStyle     =   0  'None
    Caption         =   "Splash Screen"
    ClientHeight    =   6375
@@ -16,11 +17,20 @@ Begin VB.Form frmSplashScreen
       Left            =   3360
       Top             =   3000
    End
+   Begin VB.Image imgBee 
+      Height          =   1935
+      Left            =   2760
+      Picture         =   "frmSplashScreen.frx":0000
+      Stretch         =   -1  'True
+      Top             =   2160
+      Width           =   2055
+   End
    Begin VB.Label lblTitle 
       Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       Caption         =   "Spelling Bee"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -36,7 +46,17 @@ Begin VB.Form frmSplashScreen
    End
    Begin VB.Label lblClickInfo 
       Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
       Caption         =   "Click anywhere to continue"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   240
       TabIndex        =   0
@@ -51,9 +71,21 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Private Sub Form_Load()
+
+    imgBee.Top = (frmSplashScreen.Height / 2) - imgBee.Height / 2
+    imgBee.Left = (frmSplashScreen.Width / 2) - imgBee.Width / 2
+    
+        
+End Sub
+
 Private Sub Form_Click()            'Responds to input and shows login screen
 
 frmSplashScreen.DisplayLogin
+
+End Sub
+
+Private Sub Image1_Click()
 
 End Sub
 

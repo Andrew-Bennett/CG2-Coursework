@@ -1,23 +1,35 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmTest 
-   BackColor       =   &H8000000A&
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Test Time!"
-   ClientHeight    =   8385
-   ClientLeft      =   60
-   ClientTop       =   345
-   ClientWidth     =   11490
+   ClientHeight    =   8445
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   11535
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8385
-   ScaleWidth      =   11490
-   StartUpPosition =   3  'Windows Default
+   ScaleHeight     =   8445
+   ScaleWidth      =   11535
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton cmdExit 
+      BackColor       =   &H00FFFFFF&
+      Caption         =   "Exit"
+      Height          =   975
+      Left            =   120
+      Style           =   1  'Graphical
+      TabIndex        =   47
+      Top             =   7320
+      Width           =   3375
+   End
    Begin VB.TextBox txtDBResult_ID 
       DataSource      =   "adoTests"
       Height          =   375
-      Left            =   2520
+      Left            =   9840
       TabIndex        =   45
       Text            =   "Text1"
-      Top             =   7800
+      Top             =   10200
+      Visible         =   0   'False
       Width           =   1095
    End
    Begin VB.TextBox txtDBAnswer 
@@ -25,10 +37,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   10
-      Left            =   3600
+      Left            =   10920
       TabIndex        =   44
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -36,10 +49,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   9
-      Left            =   3480
+      Left            =   10800
       TabIndex        =   43
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -47,10 +61,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   8
-      Left            =   3360
+      Left            =   10680
       TabIndex        =   42
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -58,10 +73,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   7
-      Left            =   3240
+      Left            =   10560
       TabIndex        =   41
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -69,10 +85,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   6
-      Left            =   3120
+      Left            =   10440
       TabIndex        =   40
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -80,10 +97,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   5
-      Left            =   3000
+      Left            =   10320
       TabIndex        =   39
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -91,10 +109,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   4
-      Left            =   2880
+      Left            =   10200
       TabIndex        =   38
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -102,10 +121,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   3
-      Left            =   2760
+      Left            =   10080
       TabIndex        =   37
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -113,10 +133,11 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   2
-      Left            =   2640
+      Left            =   9960
       TabIndex        =   36
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBAnswer 
@@ -124,26 +145,29 @@ Begin VB.Form frmTest
       DataSource      =   "adoTests"
       Height          =   285
       Index           =   1
-      Left            =   2520
+      Left            =   9840
       TabIndex        =   35
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   150
    End
    Begin VB.TextBox txtDBTestDate 
       DataField       =   "TestDate"
       DataSource      =   "adoTests"
       Height          =   975
-      Left            =   2040
+      Left            =   9360
       TabIndex        =   34
       Text            =   "Text1"
-      Top             =   7320
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   255
    End
    Begin MSAdodcLib.Adodc adoTests 
       Height          =   975
-      Left            =   120
-      Top             =   7320
+      Left            =   7440
+      Top             =   9720
+      Visible         =   0   'False
       Width           =   1815
       _ExtentX        =   3201
       _ExtentY        =   1720
@@ -187,14 +211,26 @@ Begin VB.Form frmTest
       _Version        =   393216
    End
    Begin VB.CommandButton cmdSubmit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Submit"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   975
       Left            =   8040
+      Style           =   1  'Graphical
       TabIndex        =   33
       Top             =   7320
       Width           =   3375
    End
    Begin VB.Frame fraTest 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Frame1"
       Height          =   6255
       Left            =   120
@@ -203,8 +239,8 @@ Begin VB.Form frmTest
       Width           =   11295
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -221,8 +257,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -239,8 +275,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -257,8 +293,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -275,8 +311,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -293,8 +329,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -311,8 +347,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -329,8 +365,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -347,8 +383,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -365,8 +401,8 @@ Begin VB.Form frmTest
       End
       Begin VB.TextBox txtAnswer 
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Name            =   "Comic Sans MS"
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -383,11 +419,13 @@ Begin VB.Form frmTest
          Width           =   3135
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition10"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -403,11 +441,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition9"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -423,11 +463,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition8"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -443,11 +485,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition7"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -463,11 +507,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition6"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -483,11 +529,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition5"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -503,11 +551,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition4"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -523,11 +573,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition3"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -543,11 +595,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition2"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -563,11 +617,13 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblDefinition 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "Definition"
          DataField       =   "Definition1"
          DataSource      =   "adoTests"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -583,9 +639,11 @@ Begin VB.Form frmTest
          Width           =   7335
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "10."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -601,9 +659,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "9."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -619,9 +679,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "8."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -637,9 +699,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "7."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -655,9 +719,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "6."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -673,9 +739,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "5."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -691,9 +759,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "4."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -709,9 +779,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "3."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -727,9 +799,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "2."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -745,9 +819,11 @@ Begin VB.Form frmTest
          Width           =   975
       End
       Begin VB.Label lblNo 
+         BackColor       =   &H80000009&
+         BackStyle       =   0  'Transparent
          Caption         =   "1."
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
+            Name            =   "Comic Sans MS"
             Size            =   18
             Charset         =   0
             Weight          =   400
@@ -765,7 +841,7 @@ Begin VB.Form frmTest
    End
    Begin VB.ComboBox cboTestDate 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -773,7 +849,7 @@ Begin VB.Form frmTest
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   555
+      Height          =   615
       Left            =   2760
       TabIndex        =   1
       Text            =   "Combo1"
@@ -781,9 +857,10 @@ Begin VB.Form frmTest
       Width           =   2415
    End
    Begin VB.Label lblMessage 
+      BackStyle       =   0  'Transparent
       Caption         =   "Saving doesn't work fully! Errors may occur!"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   13.5
          Charset         =   0
          Weight          =   400
@@ -804,10 +881,11 @@ Begin VB.Form frmTest
       Y2              =   840
    End
    Begin VB.Label lblSelectDate 
+      BackStyle       =   0  'Transparent
       Caption         =   "Select Test:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   24
+         Name            =   "Comic Sans MS"
+         Size            =   20.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -852,6 +930,13 @@ Const LOWERPERCENTNEEDED As Integer = 0.5
 
 Dim cbMoveFirst As Boolean
 
+Private Sub cmdExit_Click()
+
+Unload Me
+frmPupilMenu.Show
+
+End Sub
+
 Private Sub Form_Load()
 
 cboTestDate.Text = "Select Date"    'Changes the combo list text to select date
@@ -869,6 +954,8 @@ score = 0
 cmdSubmit.Enabled = False       'Disables the submit button until the user has selected a test date
 
 cbMoveFirst = False
+
+frmPupilMenu.Remove
 
 End Sub
 

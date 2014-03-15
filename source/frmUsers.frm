@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
 Begin VB.Form frmUsers 
    Caption         =   "Add, Edit & Delete Users"
    ClientHeight    =   9480
@@ -10,30 +10,21 @@ Begin VB.Form frmUsers
    ScaleHeight     =   9480
    ScaleWidth      =   13545
    StartUpPosition =   2  'CenterScreen
-   Begin VB.ComboBox cboPermissionLevel 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   24
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   675
-      Left            =   2040
+   Begin VB.CommandButton cmdClearDatabase 
+      Caption         =   "Clear Database"
+      Height          =   975
+      Left            =   10440
       TabIndex        =   23
-      Text            =   "Combo1"
-      Top             =   6840
-      Width           =   4815
+      Top             =   6600
+      Width           =   1335
    End
    Begin VB.CommandButton cmdPopulate 
       Caption         =   "Populate The Database"
       Height          =   975
-      Left            =   7320
+      Left            =   11880
       TabIndex        =   22
-      Top             =   6840
-      Width           =   2175
+      Top             =   6600
+      Width           =   1335
    End
    Begin VB.CommandButton cmdLast 
       Caption         =   "Last >>"
@@ -80,10 +71,10 @@ Begin VB.Form frmUsers
          Strikethrough   =   0   'False
       EndProperty
       Height          =   975
-      Left            =   7320
+      Left            =   2040
       TabIndex        =   11
-      Top             =   4080
-      Width           =   2520
+      Top             =   6840
+      Width           =   4815
    End
    Begin VB.TextBox txtYear 
       DataField       =   "ClassYear"
@@ -293,7 +284,7 @@ Begin VB.Form frmUsers
       Height          =   495
       Left            =   0
       TabIndex        =   17
-      Top             =   6960
+      Top             =   7080
       Width           =   2055
    End
    Begin VB.Label lblYear 
@@ -389,8 +380,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Dim totalRecords As Integer
-Dim recordCount As Integer
+Dim totalRecords As Long
+Dim recordCount As Long
 
 Dim newRecordActive As Boolean
 Dim LockPL As Boolean
@@ -405,12 +396,6 @@ cmdSave.Enabled = True
 newRecordActive = True
 adoUserInfo.Recordset.AddNew
 frmUsers.LockNDE
-
-End Sub
-
-Sub UpdatePlCbo()
-
-cboPermissionLevel.Text = txtPermissionLevel.Text
 
 End Sub
 
@@ -439,6 +424,50 @@ adoUserInfo.Recordset.CancelUpdate
 adoUserInfo.Recordset.MoveFirst
 frmUsers.ULockNDE
 newRecordActive = False
+
+End Sub
+
+Private Sub cmdClearDatabase_Click()
+Dim answ As String
+
+Do While adoUserInfo.Recordset.recordCount > 0
+
+    adoUserInfo.Recordset.Delete
+    adoUserInfo.Recordset.MoveNext
+    totalRecords = totalRecords - 1
+    
+Loop
+
+answ = MsgBox("Database Cleared!")
+
+adoUserInfo.Recordset.AddNew
+
+txtUsername.Text = "Default_Teacher"
+txtPassword.Text = "password123"
+txtYear.Text = "1"
+txtFirstName.Text = "Default"
+txtLastName.Text = "Teacher"
+txtPermissionLevel.Text = "Teacher"
+
+adoUserInfo.Recordset.Update
+adoUserInfo.Recordset.AddNew
+
+txtUsername.Text = "Default_Pupil"
+txtPassword.Text = "password098"
+txtYear.Text = "1"
+txtFirstName.Text = "Default"
+txtLastName.Text = "Pupil"
+txtPermissionLevel.Text = "Pupil"
+
+adoUserInfo.Recordset.Update
+
+frmUsers.FBLock
+frmUsers.LBUnlock
+
+totalRecords = 2
+recordCount = 1
+
+adoUserInfo.Recordset.MoveFirst
 
 End Sub
 
@@ -484,7 +513,6 @@ Private Sub cmdFirst_Click()        'Moves to the first record in the database
 recordCount = 1
 adoUserInfo.Recordset.MoveFirst
 frmUsers.FBLock
-frmUsers.UpdatePlCbo
 
 End Sub
 
@@ -525,7 +553,6 @@ Private Sub cmdLast_Click()         'Moves to the last record
 recordCount = totalRecords
 adoUserInfo.Recordset.MoveLast
 frmUsers.LBLock
-frmUsers.UpdatePlCbo
 
 End Sub
 
@@ -536,7 +563,6 @@ If recordCount < totalRecords Then
     recordCount = recordCount + 1
     adoUserInfo.Recordset.MoveNext
     frmUsers.FBUnlock
-    frmUsers.UpdatePlCbo
     
     If recordCount = totalRecords Then
     
@@ -550,7 +576,7 @@ End Sub
 
 Private Sub cmdPopulate_Click()
 
-Dim answ As Integer
+Dim answ As Long
 Dim i As Long
 
 answ = InputBox("How many users would you like to add?", "Populate Database")
@@ -562,8 +588,8 @@ For i = 1 To answ
     
     RandomString
     
-    txtFirstName.Text = "TEST First Name"
-    txtLastName.Text = "TEST Last Name"
+    txtFirstName.Text = "TEST First Name " & i
+    txtLastName.Text = "TEST Last Name " & i
     
     txtUsername.Text = RandomString
     
@@ -580,8 +606,13 @@ For i = 1 To answ
     txtPermissionLevel = RandomLevel
     
     adoUserInfo.Recordset.Update
+    
+    
 
-Next
+Next i
+
+frmUsers.FBUnlock
+frmUsers.LBLock
 
 End Sub
 
@@ -641,7 +672,6 @@ If recordCount > 1 Then
     recordCount = recordCount - 1
     adoUserInfo.Recordset.MovePrevious
     frmUsers.LBUnlock
-    frmUsers.UpdatePlCbo
     
     If recordCount = 1 Then
     
@@ -654,13 +684,16 @@ End If
 End Sub
 
 Private Sub cmdSave_Click() 'Checks to see if the infromation is in the right format before saving
-                            'If anything is wrong, a message box appears telling them whats wrong
+
+Dim PermLevel As String     'If anything is wrong, a message box appears telling them whats wrong
+
+PermLevel = txtPermissionLevel.Text
 
 LockPL = False
 
-txtPermissionLevel.Text = cboPermissionLevel.Text
-
 If Val(txtYear.Text) > 0 Then
+
+    If PermLevel = "Teacher" Then
         
         adoUserInfo.Recordset.Update
         newRecordActive = False
@@ -672,6 +705,28 @@ If Val(txtYear.Text) > 0 Then
         adoUserInfo.Recordset.MoveFirst
         recordCount = 1
         totalRecords = adoUserInfo.Recordset.recordCount
+        
+    Else
+        
+        If PermLevel = "Pupil" Then
+            
+            adoUserInfo.Recordset.Update
+            newRecordActive = False
+            
+            frmUsers.ULockNDE
+            cmdSave.Enabled = False
+            cmdCancel.Enabled = False
+            
+            adoUserInfo.Recordset.MoveFirst
+            recordCount = 1
+            totalRecords = adoUserInfo.Recordset.recordCount
+            
+        Else
+            
+            frmUsers.PLError
+            
+        End If
+    End If
         
 Else
 
@@ -711,10 +766,6 @@ recordCount = 1
 cmdFirst.Enabled = False
 cmdPrevious.Enabled = False
 newRecordActive = False
-
-cboPermissionLevel.Text = "Pupil"
-cboPermissionLevel.AddItem ("Pupil")
-cboPermissionLevel.AddItem ("Teacher")
 
 End Sub
 

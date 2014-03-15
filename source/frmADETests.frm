@@ -1,14 +1,15 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
 Begin VB.Form frmADETests 
    Caption         =   "Add, Edit and Delete Tests"
    ClientHeight    =   10200
    ClientLeft      =   120
    ClientTop       =   450
-   ClientWidth     =   17295
+   ClientWidth     =   16425
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10950
-   ScaleWidth      =   20160
+   ScaleHeight     =   10200
+   ScaleWidth      =   16425
+   StartUpPosition =   1  'CenterOwner
    Begin VB.TextBox txtTestTheme 
       Height          =   975
       Left            =   16680
