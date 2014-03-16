@@ -906,9 +906,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Dim username As String
-Dim id As String
-
 Dim num As Integer
 Dim score As Integer
 
@@ -930,7 +927,7 @@ Const LOWERPERCENTNEEDED As Integer = 0.5
 
 Dim cbMoveFirst As Boolean
 
-Private Sub cmdExit_Click()
+Private Sub cmdExit_Click() 'When exit is pressed close the form & show pupil menu
 
 Unload Me
 frmPupilMenu.Show
@@ -954,15 +951,6 @@ score = 0
 cmdSubmit.Enabled = False       'Disables the submit button until the user has selected a test date
 
 cbMoveFirst = False
-
-frmPupilMenu.Remove
-
-End Sub
-
-Sub ImportUserInfo()                'Stores the users info in strings
-
-username = frmPupilMenu.txtUsername
-id = frmPupilMenu.txtID
 
 End Sub
 
@@ -1015,7 +1003,7 @@ Sub AddField()
     conn.Open
 
     On Error GoTo AddFieldError         'Add new field in the form of Result_[ID]
-    query = "ALTER TABLE " & "Test" & " ADD COLUMN " & "Result_" & id & " " & "Text"
+    query = "ALTER TABLE " & "Test" & " ADD COLUMN " & "Result_" & globalID & " " & "Text"
     
     If Len(Trim$("0")) >= 0 Then        'Can be used so that a default can be choosen
         
