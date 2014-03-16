@@ -4,13 +4,13 @@ Begin VB.Form frmTest
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   0  'None
    Caption         =   "Test Time!"
-   ClientHeight    =   8445
+   ClientHeight    =   12840
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   11535
+   ClientWidth     =   21060
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8445
-   ScaleWidth      =   11535
+   ScaleHeight     =   12840
+   ScaleWidth      =   21060
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdExit 
       BackColor       =   &H00FFFFFF&
@@ -969,23 +969,31 @@ frmTest.StoreResult
 End Sub
 
 Sub StoreResult()   'Refreshes the database incase of a new field addition
-On Error GoTo ErrorM
 
 adoTests.Refresh
 
 txtDBResult_ID.DataField = "Result_" & globalID       'Changes the field to the users result field
 
-txtDBResult_ID.Text = score                     'Change and save the users score in the database
+frmTest.MoveToTest
 
-adoTests.Recordset.Update
+End Sub
 
-Exit Sub
+Sub MoveToTest()
 
-ErrorM:
+Debug.Print (txtDBTestDate.Text)
+Debug.Print (txtDBResult_ID.Text)
 
-MsgBox ("Error " & Err.Number & " " & Err.Description)
+If txtDBTestDate.Text = cboTestDate.Text Then
 
-Exit Sub
+    txtDBResult_ID.Text = score                     'Change and save the users score in the database
+    adoTests.Recordset.UpdateBatch
+
+Else
+
+    adoTests.Recordset.MoveNext
+    frmTest.MoveToTest
+    
+End If
 
 
 End Sub
