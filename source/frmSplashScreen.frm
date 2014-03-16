@@ -84,6 +84,12 @@ frmSplashScreen.DisplayLogin
 
 End Sub
 
+Private Sub imgBee_Click()
+
+frmSplashScreen.DisplayLogin
+
+End Sub
+
 Private Sub lblClickInfo_Click()    'Responds to input and shows login screen
 
 frmSplashScreen.DisplayLogin
@@ -92,19 +98,14 @@ End Sub
 
 Sub DisplayLogin()                  'Displays the login screen
 
-frmLogin.ShowScreen
+Unload Me
+frmLogin.Show
 
 End Sub
 
 Private Sub lblTitle_Click()        'Responds to input and shows login screen
 
 frmSplashScreen.DisplayLogin
-
-End Sub
-
-Sub Remove()                       'Removes the form
-
-Unload Me
 
 End Sub
 

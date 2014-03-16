@@ -475,7 +475,7 @@ frmLogin.Login
 
 End Sub
 
-Private Sub cmdPLogin_Click()   'Enters the account details of a pupil for ease of access
+Private Sub cmdPLogin_Click()   'Enters the account details of a pupil for ease of access & for testing purposes
 
 txtUsername.Text = "Default_Pupil"
 txtPassword.PasswordChar = "*"
@@ -484,7 +484,7 @@ txtPassword.ForeColor = "&H80000006"
 
 End Sub
 
-Private Sub cmdTLogin_Click()   'Enters the account details of a teacher for ease of access
+Private Sub cmdTLogin_Click()   'Enters the account details of a teacher for ease of access & for testing purposes
 
 txtUsername.Text = "Default_Teacher"
 txtPassword.PasswordChar = "*"
@@ -531,13 +531,6 @@ End If
 
 End Sub
 
-Sub ShowScreen()            'Shows the login screen and removes the splash screen
-
-frmSplashScreen.Remove
-frmLogin.Visible = True
-
-End Sub
-
 Private Sub txtUsername_GotFocus()  'If the username is clicked it will change color and remove any text
 
 txtUsername.Text = ""
@@ -550,23 +543,5 @@ Private Sub txtPassword_GotFocus()  ' if the password is clicked it will set a p
 txtPassword.Text = ""
 txtPassword.ForeColor = &H80000006
 txtPassword.PasswordChar = "*"
-
-End Sub
-
-Sub Remove()            'Remove the login form
-
-Unload Me
-
-End Sub
-
-Sub RemoveTMenu()       'Remove the teacher menu
-
-frmTeacherMenu.Remove
-
-End Sub
-
-Sub RemovePMenu()       'Remove the pupil menu
-
-frmPupilMenu.Remove
 
 End Sub

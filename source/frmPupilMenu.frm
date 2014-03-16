@@ -118,9 +118,12 @@ answ = MsgBox("Are you sure you want to logout?", vbYesNo, "Exit?")
 If answ = vbYes Then
     globalUsername = ""
 
-    frmLogin.ShowScreen
-    frmLogin.RemovePMenu
+    Unload Me
+    frmLogin.Show
+    
 Else
+
+    'Do nothing
 
 End If
 
@@ -128,12 +131,14 @@ End Sub
 
 Private Sub cmdResults_Click()  'Sends the user to the results form
 
+Unload Me
 frmStudentResults.PupilShow
 
 End Sub
 
 Private Sub cmdTest_Click()     'Sends the user to the test form
 
+Unload Me
 frmTest.Show
 
 End Sub
@@ -147,18 +152,5 @@ End Sub
 Sub DisplayWelcomeMessage() 'takes users info and displays a personal welcome message
 
 lblWelcome.Caption = ("Welcome " & globalFirstName & " " & globalLastName & " Of Year " & globalYear)
-
-End Sub
-
-Sub CleanUp()   'Removes the login form
-
-frmLogin.Visible = False
-frmLogin.Remove
-
-End Sub
-
-Sub Remove()    'Removes current form
-
-Unload Me
 
 End Sub
