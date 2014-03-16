@@ -975,6 +975,7 @@ adoTests.Refresh
 txtDBResult_ID.DataField = "Result_" & globalID       'Changes the field to the users result field
 
 frmTest.MoveToTest
+Debug.Print (score)
 
 End Sub
 
@@ -985,8 +986,12 @@ Debug.Print (txtDBResult_ID.Text)
 
 If txtDBTestDate.Text = cboTestDate.Text Then
 
-    txtDBResult_ID.Text = score                     'Change and save the users score in the database
-    adoTests.Recordset.UpdateBatch
+    txtDBResult_ID.Text = score     'Change and save the users score in the database
+    Debug.Print ("Score: " & txtDBResult_ID.Text)
+    adoTests.Recordset.Update
+    adoTests.Refresh
+    Debug.Print ("New Score: " & txtDBResult_ID.Text)
+    
 
 Else
 
