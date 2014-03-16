@@ -941,8 +941,6 @@ cboTestDate.Text = "Select Date"    'Changes the combo list text to select date
 frmTest.ClearDA                 'Clears the definitions and text boxes
 frmTest.UpdateCBOList           'Adds all the test dates to the combo list
 
-frmTest.ImportUserInfo          'Imports user info from the pupil menu
-
 lockAnswers = True              'Locks answers until a test date has been choosen
 frmTest.LockA
 
@@ -975,7 +973,7 @@ On Error GoTo ErrorM
 
 adoTests.Refresh
 
-txtDBResult_ID.DataField = "Result_" & id       'Changes the field to the users result field
+txtDBResult_ID.DataField = "Result_" & globalID       'Changes the field to the users result field
 
 txtDBResult_ID.Text = score                     'Change and save the users score in the database
 
