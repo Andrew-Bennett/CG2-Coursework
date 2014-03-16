@@ -35,20 +35,10 @@ Begin VB.Form frmLogin
       EndProperty
       Height          =   285
       Left            =   1920
-      TabIndex        =   17
+      TabIndex        =   16
       Text            =   "Text1"
       Top             =   7200
       Width           =   615
-   End
-   Begin VB.CommandButton cmdTests 
-      BackColor       =   &H00FFFFFF&
-      Caption         =   "T"
-      Height          =   375
-      Left            =   7320
-      Style           =   1  'Graphical
-      TabIndex        =   16
-      Top             =   4200
-      Width           =   255
    End
    Begin VB.CommandButton cmdPLogin 
       BackColor       =   &H00FFFFFF&
@@ -58,6 +48,7 @@ Begin VB.Form frmLogin
       Style           =   1  'Graphical
       TabIndex        =   15
       Top             =   1440
+      Visible         =   0   'False
       Width           =   255
    End
    Begin VB.CommandButton cmdTLogin 
@@ -68,6 +59,7 @@ Begin VB.Form frmLogin
       Style           =   1  'Graphical
       TabIndex        =   14
       Top             =   960
+      Visible         =   0   'False
       Width           =   255
    End
    Begin VB.TextBox txtDBYear 
@@ -381,11 +373,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Dim username As String
 Dim password As String
-
-Dim usernameCorrect As Boolean
-Dim passwordCorrect As Boolean
 
 Private Sub Form_Load()         'When the form loads it refreshs the database and turns user&pass correct to false
 
@@ -400,16 +388,16 @@ frmLogin.SearchForUser      'Search for the user in the database
 
 End Sub
 
-Sub StoreUserInfo()
+Sub StoreUserInfo() 'Stores the username & password in the text boxes to strings
 
 globalUsername = txtUsername.Text
 password = txtPassword.Text
 
 End Sub
 
-Sub SearchForUser()
+Sub SearchForUser() 'Searchs for the user in the database and determines whether or not they can log in
 
-If txtDBUsername.Text = globalUsername Then
+If txtDBUsername.Text = globalUsername Then     'Tests for the correct username & password combo
 
     If txtDBPassword.Text = password Then
     
@@ -419,13 +407,13 @@ If txtDBUsername.Text = globalUsername Then
     
 Else
 
-    If adoUser.Recordset.EOF = True Then
+    If adoUser.Recordset.EOF = True Then    'If at the end of the database file then display incorrect combo message
     
         lblIncorrectMessage.Caption = "Incorrect Username or Password"
     
     Else
     
-        adoUser.Recordset.MoveNext
+        adoUser.Recordset.MoveNext      'Else move next and check again
         frmLogin.SearchForUser
         
     End If
@@ -434,7 +422,7 @@ End If
 
 End Sub
 
-Sub CheckPermissionLevel()
+Sub CheckPermissionLevel()  'Tests for the permission level and sends them to the relevant form
 
 If txtDBPermissionLevel.Text = "Teacher" Then
     
@@ -452,7 +440,7 @@ End If
 
 End Sub
 
-Sub SetGlobals()
+Sub SetGlobals()    'Takes their information from the database and stores them in Globals for use later
 
 globalUsername = txtUsername.Text
 globalID = txtDBID.Text
@@ -493,12 +481,6 @@ txtUsername.Text = "Default_Pupil"
 txtPassword.PasswordChar = "*"
 txtPassword.Text = "password098"
 txtPassword.ForeColor = "&H80000006"
-
-End Sub
-
-Private Sub cmdTests_Click()
-
-frmUsers.Show
 
 End Sub
 
