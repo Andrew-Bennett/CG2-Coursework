@@ -143,7 +143,7 @@ Option Explicit
 
 Private Sub cmdLogout_Click()   'Asks the user are they sure they want to logout
 
-Dim answ As String
+Dim answ As Integer
 
 answ = MsgBox("Are you sure you want to logout?", vbYesNo, "Exit?")
 

@@ -4,13 +4,13 @@ Begin VB.Form frmTest
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   0  'None
    Caption         =   "Test Time!"
-   ClientHeight    =   12840
+   ClientHeight    =   8430
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   21060
+   ClientWidth     =   11550
    LinkTopic       =   "Form1"
-   ScaleHeight     =   12840
-   ScaleWidth      =   21060
+   ScaleHeight     =   8430
+   ScaleWidth      =   11550
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdExit 
       BackColor       =   &H00FFFFFF&

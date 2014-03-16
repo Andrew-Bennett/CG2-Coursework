@@ -447,7 +447,7 @@ Begin VB.Form frmUsers
       Left            =   120
       TabIndex        =   15
       Top             =   4440
-      Width           =   1815
+      Width           =   2175
    End
    Begin VB.Label lblFirstName 
       BackStyle       =   0  'Transparent
@@ -465,7 +465,7 @@ Begin VB.Form frmUsers
       Left            =   0
       TabIndex        =   14
       Top             =   3120
-      Width           =   1935
+      Width           =   2175
    End
    Begin VB.Label lblPassword 
       BackStyle       =   0  'Transparent
@@ -787,7 +787,7 @@ Function RandomString() As String
     Dim rgch As String
     
     rgch = "abcdefghijklmnopqrstuvwxyz"
-    rgch = rgch & UCase(rgch) & "0123456789!£$%^&*()_+-=[]{}#~@;/:?.,><|\`¬"
+    rgch = rgch & UCase(rgch) '& "0123456789!£$%^&*()_+-=[]{}#~@;/:?.,><|\¬`"
 
     Dim i As Long
     For i = 1 To cb
@@ -877,7 +877,7 @@ If LockPL = False Then
     
     LockPL = True
     
-    Dim answ2 As String
+    Dim answ2 As Integer
                 
     answ2 = MsgBox("'Permission Level' Should be either Pupil or Teacher!", vbOKOnly, "Error!")
     txtPermissionLevel.Text = ""

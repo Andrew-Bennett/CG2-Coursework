@@ -352,7 +352,7 @@ Begin VB.Form frmLogin
       Caption         =   "Greenparks School - Spelling Test"
       BeginProperty Font 
          Name            =   "Comic Sans MS"
-         Size            =   24
+         Size            =   23.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -360,10 +360,10 @@ Begin VB.Form frmLogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   120
+      Left            =   0
       TabIndex        =   0
       Top             =   120
-      Width           =   7455
+      Width           =   7695
    End
 End
 Attribute VB_Name = "frmLogin"

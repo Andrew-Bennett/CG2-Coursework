@@ -1,10 +1,12 @@
 VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmADETests 
+   BackColor       =   &H00FFFFFF&
+   BorderStyle     =   0  'None
    Caption         =   "Add, Edit and Delete Tests"
    ClientHeight    =   10200
-   ClientLeft      =   120
-   ClientTop       =   450
+   ClientLeft      =   0
+   ClientTop       =   0
    ClientWidth     =   16425
    LinkTopic       =   "Form1"
    ScaleHeight     =   10200
@@ -19,33 +21,77 @@ Begin VB.Form frmADETests
       Width           =   615
    End
    Begin VB.CommandButton cmdEdit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Edit"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   14040
+      Style           =   1  'Graphical
       TabIndex        =   45
       Top             =   120
       Width           =   2295
    End
    Begin VB.CommandButton cmdDelete 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Delete"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   11640
+      Style           =   1  'Graphical
       TabIndex        =   44
       Top             =   120
       Width           =   2295
    End
    Begin VB.CommandButton cmdSave 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Save"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   9240
+      Style           =   1  'Graphical
       TabIndex        =   43
       Top             =   120
       Width           =   2295
    End
    Begin VB.CommandButton cmdAdd 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Add"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1215
       Left            =   6840
+      Style           =   1  'Graphical
       TabIndex        =   42
       Top             =   120
       Width           =   2295
@@ -61,9 +107,20 @@ Begin VB.Form frmADETests
       Width           =   3615
    End
    Begin VB.CommandButton cmdExit 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Exit"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1335
       Left            =   14040
+      Style           =   1  'Graphical
       TabIndex        =   40
       Top             =   8760
       Width           =   2295
@@ -72,7 +129,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition10"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -92,7 +149,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition9"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -112,7 +169,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition8"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -132,7 +189,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition7"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -152,7 +209,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition6"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -172,7 +229,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition5"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -192,7 +249,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition4"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -212,7 +269,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition3"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -232,7 +289,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition2"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -252,7 +309,7 @@ Begin VB.Form frmADETests
       DataField       =   "Definition1"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -269,33 +326,77 @@ Begin VB.Form frmADETests
       Width           =   10215
    End
    Begin VB.CommandButton cmdLast 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Last >>"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1335
       Left            =   9960
+      Style           =   1  'Graphical
       TabIndex        =   39
       Top             =   8760
       Width           =   2295
    End
    Begin VB.CommandButton cmdNext 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "Next >"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1335
       Left            =   7560
+      Style           =   1  'Graphical
       TabIndex        =   38
       Top             =   8760
       Width           =   2295
    End
    Begin VB.CommandButton cmdPrevious 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "< Previous"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1335
       Left            =   5040
+      Style           =   1  'Graphical
       TabIndex        =   37
       Top             =   8760
       Width           =   2295
    End
    Begin VB.CommandButton cmdFirst 
+      BackColor       =   &H00FFFFFF&
       Caption         =   "<< First"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1335
       Left            =   2640
+      Style           =   1  'Graphical
       TabIndex        =   36
       Top             =   8760
       Width           =   2295
@@ -304,7 +405,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word10"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -324,7 +425,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word9"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -344,7 +445,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word8"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -364,7 +465,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word7"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -384,7 +485,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word6"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -404,7 +505,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word5"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -424,7 +525,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word4"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -444,7 +545,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word3"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -464,7 +565,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word2"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -484,7 +585,7 @@ Begin VB.Form frmADETests
       DataField       =   "Word1"
       DataSource      =   "adoTests"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -532,7 +633,7 @@ Begin VB.Form frmADETests
    End
    Begin VB.ComboBox cboDate 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   24
          Charset         =   0
          Weight          =   400
@@ -540,7 +641,7 @@ Begin VB.Form frmADETests
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   675
+      Height          =   795
       ItemData        =   "frmADETests.frx":0000
       Left            =   3000
       List            =   "frmADETests.frx":0002
@@ -596,10 +697,11 @@ Begin VB.Form frmADETests
       _Version        =   393216
    End
    Begin VB.Label lblDefinition 
+      BackStyle       =   0  'Transparent
       Caption         =   "Definitions -"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   18
+         Name            =   "Comic Sans MS"
+         Size            =   15.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -613,9 +715,10 @@ Begin VB.Form frmADETests
       Width           =   1935
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 10:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -625,15 +728,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   10
-      Left            =   240
+      Left            =   120
       TabIndex        =   34
       Top             =   8040
-      Width           =   1455
+      Width           =   2055
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 9:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -643,15 +747,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   9
-      Left            =   240
+      Left            =   120
       TabIndex        =   33
       Top             =   7320
-      Width           =   1335
+      Width           =   1575
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 8:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -661,15 +766,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   8
-      Left            =   240
+      Left            =   120
       TabIndex        =   32
       Top             =   6600
-      Width           =   1335
+      Width           =   1695
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 7:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -679,15 +785,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   7
-      Left            =   240
+      Left            =   120
       TabIndex        =   31
       Top             =   5880
-      Width           =   1335
+      Width           =   1935
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 6:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -697,15 +804,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   6
-      Left            =   240
+      Left            =   120
       TabIndex        =   30
       Top             =   5160
-      Width           =   1335
+      Width           =   1815
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 5:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -715,15 +823,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   5
-      Left            =   240
+      Left            =   120
       TabIndex        =   29
       Top             =   4440
-      Width           =   1335
+      Width           =   1815
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 4:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -733,15 +842,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   4
-      Left            =   240
+      Left            =   120
       TabIndex        =   28
       Top             =   3720
-      Width           =   1335
+      Width           =   1815
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 3:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -751,15 +861,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   3
-      Left            =   240
+      Left            =   120
       TabIndex        =   27
       Top             =   3000
-      Width           =   1335
+      Width           =   1935
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 2:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -769,15 +880,16 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   2
-      Left            =   240
+      Left            =   120
       TabIndex        =   26
       Top             =   2280
-      Width           =   1335
+      Width           =   1695
    End
    Begin VB.Label lblWord 
+      BackStyle       =   0  'Transparent
       Caption         =   "Word 1:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Comic Sans MS"
          Size            =   18
          Charset         =   0
          Weight          =   400
@@ -787,16 +899,17 @@ Begin VB.Form frmADETests
       EndProperty
       Height          =   495
       Index           =   1
-      Left            =   240
+      Left            =   120
       TabIndex        =   25
       Top             =   1560
-      Width           =   1335
+      Width           =   1575
    End
    Begin VB.Label lblDateOfTest 
+      BackStyle       =   0  'Transparent
       Caption         =   "Date of Test:"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   24
+         Name            =   "Comic Sans MS"
+         Size            =   21.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -804,9 +917,9 @@ Begin VB.Form frmADETests
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   240
+      Left            =   120
       TabIndex        =   1
-      Top             =   240
+      Top             =   120
       Width           =   3135
    End
 End
@@ -816,10 +929,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-
-Dim dbDate As Integer
-Dim dbDateCount As Integer
-Dim cbDate As String
 
 Dim recordCount As Integer
 Dim totalRecords As Integer
