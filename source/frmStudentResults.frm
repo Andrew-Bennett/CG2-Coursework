@@ -1001,6 +1001,16 @@ Private Sub cmdLogout_Click()   'Logs out the user
  
  Unload Me
  
+ If globalPermissionLevel = "Teacher" Then
+ 
+    frmTeacherMenu.Show
+    
+Else
+
+    frmPupilMenu.Show
+    
+End If
+
 End Sub
 
 Sub TeacherCheck()      'Moves forward if its a teacher, as teachers wont be taking the tests

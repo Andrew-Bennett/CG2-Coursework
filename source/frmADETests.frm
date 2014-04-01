@@ -986,6 +986,7 @@ End Sub
 Private Sub cmdExit_Click()     'Unloads current form
 
 Unload Me
+frmTeacherMenu.Show
 
 End Sub
 

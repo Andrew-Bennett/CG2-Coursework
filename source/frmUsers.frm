@@ -636,6 +636,7 @@ If newRecordActive = True Then
 End If
 
 Unload Me
+frmTeacherMenu.Show
 
 End Sub
 
