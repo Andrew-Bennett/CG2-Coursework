@@ -920,7 +920,7 @@ On Error GoTo AddFieldError:
 
 lblDate(currentNum).Caption = txtDBTestDate.Text & " - "
 lblDate(currentNum).Visible = True
-txtDBResult_ID.DataField = "Result_" & id
+txtDBResult_ID.DataField = "Result_" & globalID
 lblResult(currentNum).Caption = txtDBResult_ID.Text & "/20"
 lblResult(currentNum).Visible = True
 
@@ -941,16 +941,13 @@ Sub PupilShow()         'Loads the form as in pupil mode, so that they can only 
 frmStudentResults.Show
 frmStudentResults.Height = 8805
 
-username = frmPupilMenu.txtUsername.Text
-id = frmPupilMenu.txtID.Text
-
 frmStudentResults.MoveToActiveUser
 
 End Sub
 
 Sub MoveToActiveUser()      'Moves forward the ado until it reaches the user thats currently using the program
 
-If username = txtUser.Text Then
+If globalUsername = txtUser.Text Then
 
     'Do nothing
     

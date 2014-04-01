@@ -1090,11 +1090,11 @@ If editMode = False Then
     
     answ = InputBox("Enter Date Of The Test:", "One more thing!")
     txtDBTestDate.Text = answ
-    adoTests.Recordset.Update
+    adoTests.Recordset.UpdateBatch
 
 Else
 
-    adoTests.Recordset.Update           'Else update the database
+    adoTests.Recordset.UpdateBatch           'Else update the database
 
 End If
 

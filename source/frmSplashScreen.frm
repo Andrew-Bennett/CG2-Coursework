@@ -75,7 +75,7 @@ Private Sub Form_Load() 'Centers the image of a bee
 
     imgBee.Top = (frmSplashScreen.Height / 2) - imgBee.Height / 2   'Centers the image of the bee to the center of the screen no matter what the size of the form is
     imgBee.Left = (frmSplashScreen.Width / 2) - imgBee.Width / 2
-    
+      
 End Sub
 
 Private Sub Form_Click()            'Responds to input and shows login screen

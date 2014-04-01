@@ -538,6 +538,14 @@ cmdEdit.Enabled = False
 
 End Sub
 
+Private Sub cmdEdit_Click()
+
+frmUsers.LockNDE
+cmdSave.Enabled = True
+cmdCancel.Enabled = True
+
+End Sub
+
 Sub ULockNDE()              'Unlocks the add, edit and delete buttons
 
 cmdAdd.Enabled = True
@@ -828,6 +836,8 @@ If Val(txtYear.Text) > 0 Then
     If PermLevel = "Teacher" Then
         
         adoUserInfo.Recordset.Update
+        adoUserInfo.Recordset.UpdateBatch
+    
         newRecordActive = False
         
         frmUsers.ULockNDE
@@ -843,6 +853,8 @@ If Val(txtYear.Text) > 0 Then
         If PermLevel = "Pupil" Then
             
             adoUserInfo.Recordset.Update
+            adoUserInfo.Recordset.UpdateBatch
+        
             newRecordActive = False
             
             frmUsers.ULockNDE

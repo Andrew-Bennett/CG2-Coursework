@@ -958,6 +958,7 @@ score = 0
 
 frmTest.CompareAnswers
 frmTest.CheckField
+cmdSubmit.Enabled = False
 
 End Sub
 
@@ -1152,6 +1153,8 @@ End If
 End Sub
 
 Sub MoveToDate()        'Moves the ado until the ado matches the cbo selection
+
+cmdSubmit.Enabled = True
 
 If cbMoveFirst = True Then
     cbMoveFirst = False
